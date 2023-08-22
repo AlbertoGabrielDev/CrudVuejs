@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
-Route::get('/clients', [ClientController::class, 'index'])->name('clients.index'); //Mostrar
-Route::get('/clients/{client}', [ClientController::class, 'show'])->name('clients.show'); //Buscar
-Route::post('/clients', [ClientController::class, 'store'])->name('clients.store'); //Criar
-Route::put('/clients/{client}', [ClientController::class, 'update'])->name('clients.update'); //Alterar
-Route::delete('/clients/{client}', [ClientController::class, 'destroy'])->name('clients.destroy'); //Deletar
+Route::prefix('home')->group(function(){
+        Route::get('/clients', [ClienteController::class, 'index'])->name('clients.index'); //Mostrar
+        Route::get('/clients/{client}', [ClienteController::class, 'show'])->name('clients.show'); //Buscar
+        Route::post('/clients', [ClienteController::class, 'store'])->name('clients.store'); //Criar
+        Route::put('/clients/{client}', [ClienteController::class, 'update'])->name('clients.update'); //Alterar
+        Route::delete('/clients/{client}', [ClienteController::class, 'destroy'])->name('clients.destroy'); //Deletar
+
+});

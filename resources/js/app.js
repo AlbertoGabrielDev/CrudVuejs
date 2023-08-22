@@ -7,6 +7,6 @@ import Index from './components/Index.vue';
 const app = createApp();
 
 app.component('app',App);
-//app.component('app',Index)
+app.component('app',Index)
 
 app.mount('#app');
