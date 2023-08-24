@@ -13,9 +13,9 @@ use App\Http\Controllers\ClienteController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::prefix('home')->group(function(){
         Route::get('/clients', [ClienteController::class, 'index'])->name('clients.index'); //Mostrar

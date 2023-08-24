@@ -1,10 +1,9 @@
-@extends('master')
+<!-- @extends('master')
 
 @section('content')
-   
-<App/>
 
-<Index/>
 
-@endsection
+<App />
+<Index />
 
+@endsection -->
